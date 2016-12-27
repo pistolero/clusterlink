@@ -4,7 +4,7 @@
 <title>Sankey Diagram</title>
 <style>
   #chart {
-    height: 2500px;
+    height: 5000px;
 }
 
 .node rect {
@@ -16,6 +16,7 @@
 .node text {
     pointer-events: none;
     text-shadow: 0 1px 0 #fff;
+    font-size: 12px;
 }
 
 .link {
@@ -130,7 +131,7 @@ td {
             left: 1
         },
         width = 960 - margin.left - margin.right,
-        height = 2500 - margin.top - margin.bottom;
+        height = 5000 - margin.top - margin.bottom;
 
     var formatNumber = d3.format(",.0f"),
         format = function(d) {
@@ -229,7 +230,6 @@ td {
             })
             .attr("dy", ".35em")
             .attr("text-anchor", "end")
-            .attr("font-size", "10")
             .attr("transform", null)
             .text(function(d) {
                 return d.name;
