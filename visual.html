@@ -54,6 +54,15 @@ td {
     vertical-align: top;
     width: 50%;
 }
+
+#info h2 {
+    margin-top:0;
+}
+
+#info h3 {
+    margin:10px 0 0px 0;
+}
+
 </style>
 
 <body>
@@ -65,12 +74,20 @@ td {
             <div>
             similarity <span id="similarity"></span>
             </div>
-            <div style="flex-grow: 1; display:flex;">
-                <!--div id="c1" style="width:50%;flex-grow:0">
+            <div style="flex-grow: 1; display:flex; flex-direction: column;">
+                <div style="display: flex; flex: 1 0 0px; height: 50%;overflow-y: auto;">
+                    <div id="c1" style="width:50%;flex-grow:0">
+                    </div>
+                    <div id="c2" style="width:50%;flex-grow:0">
+                    </div>
                 </div>
-                <div id="c2" style="width:50%;flex-grow:0">
-                </div-->
-                <table>
+                <div style="display: flex; flex: 1 0 0px; height: 50%;overflow-y: auto">
+                    <div id="c1d" style="width:50%;flex-grow:0">
+                    </div>
+                    <div id="c2d" style="width:50%;flex-grow:0">
+                    </div>
+                </div>
+                <!--table>
                     <tr>
                         <td id="c1"></td>
                         <td id="c2"></td>
@@ -79,7 +96,7 @@ td {
                         <td id="c1d"></td>
                         <td id="c2d"></td>
                     </tr>
-                </table>
+                </table-->
             </div>
         </div>
     </div>
@@ -97,7 +114,7 @@ td {
         }
         function renderCluster(cluster) {
             var bits = [];
-            bits.push('<h2>' + escapeHtml(cluster.name) + '</h2>');
+            bits.push('<h2>' + escapeHtml(cluster.name) + '</h2><h3>centroid</h3>');
             bits.push('<table>');
             for (var i=0;i<cluster.centroid.length;i++) {
                 bits.push('<tr>');
